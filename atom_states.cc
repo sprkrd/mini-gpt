@@ -22,7 +22,7 @@ enum { CLEAR = 0x0, OPEN = 0x1, CLOSED = 0x2 };
 stateHash_t* state_t::state_hash_ = 0;
 std::pair<state_t*,Rational>* state_t::display_ = 0;
 bool state_t::state_space_generated_ = false;
-unsigned state_t::size_ = 0;
+size_t state_t::size_ = 0;
 
 void
 state_t::initialize( const problem_t &problem )

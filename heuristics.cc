@@ -382,7 +382,7 @@ atomMin1ForwardHeuristic_t::statistics( std::ostream &os ) const
  ******************************************************************************/
 
 atomMinMForwardHeuristic_t::atomMinMForwardHeuristic_t( const problem_t &problem,
-							size_t m )
+							unsigned m )
   : heuristic_t(problem), m_(m), relaxation_(problem.medium_relaxation())
 {
   array_ = (ushort_t*)malloc( m_ * sizeof(ushort_t) );
@@ -643,7 +643,7 @@ atomMinMBackwardHeuristic_t::system_t::print( std::ostream &os ) const
   os << " } ]";
 }
 
-atomMinMBackwardHeuristic_t::atomMinMBackwardHeuristic_t( const problem_t &problem, size_t m )
+atomMinMBackwardHeuristic_t::atomMinMBackwardHeuristic_t( const problem_t &problem, unsigned m )
   : heuristic_t(problem), m_(m), relaxation_(problem.medium_relaxation())
 {
   std::vector<std::pair<const atomList_t*,ushort_t> >::const_iterator ei;
