@@ -25,9 +25,13 @@ planner:	$(OBJ)
 pplanner:	$(OBJ)
 		purify $(C++) -o pplanner $(OBJ) $(LDFLAGS) $(LIBS)
 
-parser.cc:	parser.y
-		$(YACC) parser.y
+parser:	parser.y
+		$(YACC) parser.y		
+
+parser.cc: parser
 		mv y.tab.c parser.cc
+
+parser.h: parser
 		mv y.tab.h parser.h
 
 lexer.cc:	lexer.l
